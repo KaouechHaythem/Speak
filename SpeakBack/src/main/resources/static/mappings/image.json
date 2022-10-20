@@ -1,0 +1,11 @@
+{
+  "properties" : {
+    "id": {
+      "type": "keyword"
+    },
+    "content": {
+      "type": "text"
+    }
+
+  }
+}
