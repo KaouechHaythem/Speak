@@ -9,12 +9,24 @@ import speak.example.SpeakBack.helper.Indices;
 
 @Document(indexName = Indices.POST_INDEX)
 @Setting(settingPath = "static/es-settings.json")
-public  class Post {
-    @Field(type = FieldType.Keyword,name = "id")
+
+public abstract class Post {
+    @Field(type = FieldType.Keyword, name = "id")
     @Id
-    private String id ;
-    @Field(type = FieldType.Text,name = "content")
-    private String content ;
+    private String id;
+    //name
+    //table postgresql
+    //postgres
+    //program
+    //listener
+    //synchronisation
+    @Field(type = FieldType.Text, name = "description")
+    private String description;
+
+    public Post(String id, String description) {
+        this.id = id;
+        this.description = description;
+    }
 
     public String getId() {
         return id;
@@ -24,11 +36,11 @@ public  class Post {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getDescription() {
+        return description;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

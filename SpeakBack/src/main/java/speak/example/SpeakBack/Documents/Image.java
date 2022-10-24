@@ -1,32 +1,15 @@
 package speak.example.SpeakBack.Documents;
 
 
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+public class Image extends Post {
+    @Field(type = FieldType.Text)
+    String content;
 
-import java.util.Date;
-
-public class Image {
-    private String id;
-    private String content;
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
+    public Image(String id, String description, String content) {
+        super(id, description);
         this.content = content;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-
-
-
 }
