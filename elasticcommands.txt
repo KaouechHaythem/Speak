@@ -1,0 +1,4 @@
+
+sudo systemctl start elasticsearch
+systemctl status elasticsearch
+sudo systemctl stop elasticsearch

@@ -1,0 +1,74 @@
+<div style="margin-left: 10px; margin-top: 10px; width:800px;">
+    <div class="panel">
+        <form #postForm="ngForm" (ngSubmit)="onAddFile(postForm)">
+            <input placeholder="Whats in your mind today?" class="form-control input-lg p-text-area" type="text" name="description">
+            <button class="btn btn-primary pull-right" >Post</button>
+        </form>
+        <footer class="panel-footer">
+           
+            <ul class="nav " style="padding-top:5px ;">
+                
+                <li>
+                    <button id="photoB" type="button" style="padding: 0;"data-bs-toggle="modal"class="btn bg-transparent" data-bs-target="#addPhotoModal" ><i class="fa fa-camera" style="padding-right: 10px; color:#0d6efd ;"></i></button>
+                </li>
+                <li>
+                    <button id="videoB" type="button" style="   padding: 0;" data-bs-toggle="modal"class="btn bg-transparent " data-bs-target="#addVideoModal" ><i class="fa fa-film" style="padding-right: 10px; color:#0d6efd ;"></i></button>
+                </li>
+              
+            </ul>
+        </footer>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addPhotoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add a photo</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+     
+            <div class="modal-body">
+            <form #photoForm="ngForm" (ngSubmit)="typePhoto()">
+            
+            
+              <input type="file" name="inputFile" (change)="createFile($event)" ngModel required>
+        
+            <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
+             <button [disabled]="photoForm.invalid" type="submit" class="btn btn-primary">Add</button>
+             </div>
+              </form>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addVideoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+         <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add a Video</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+     
+            <div class="modal-body">
+            <form #videoForm="ngForm" (ngSubmit)="typePhoto()">
+            
+            
+              <input type="file" name="inputFile" (change)="createFile($event)" ngModel required>
+        
+            <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
+             <button [disabled]="videoForm.invalid" type="submit" class="btn btn-primary">Add</button>
+             </div>
+              </form>
+         </div>
+        </div>
+      </div>
+    </div>
+</div>
