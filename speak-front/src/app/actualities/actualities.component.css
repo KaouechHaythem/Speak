@@ -1,7 +1,7 @@
 body {
     color: #797979;
-    height: 100%;
-    background:#eee;
+    
+    background: #f1f2f7;
     font-family: 'Open Sans', sans-serif;
     padding-top: 20px ;
     margin: 0px !important;
@@ -9,4 +9,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+}
+.timeline{
+    margin-left: 350px;
 }

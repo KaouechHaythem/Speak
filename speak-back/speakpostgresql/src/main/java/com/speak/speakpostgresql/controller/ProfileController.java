@@ -1,5 +1,6 @@
 package com.speak.speakpostgresql.controller;
 
+import com.speak.speakpostgresql.model.Profile;
 import com.speak.speakpostgresql.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,14 +10,14 @@ public class ProfileController {
     @Autowired
     private ProfileService profileService;
 
+    /**
+     * save a profile
+     *
+     * @param profile
+     */
     @PostMapping(path = "/save")
-    public void addProfile(
-            @RequestParam("name") String name,
-            @RequestParam("lastName") String lastName,
-            @RequestParam("description") String description,
-            @RequestParam("email") String email,
-            @RequestParam("age") String age) {
-        this.profileService.addProfile(name, lastName, description, email, age);
+    public void addProfile(@RequestBody Profile profile) {
+        this.profileService.addProfile(profile);
     }
 
     /**

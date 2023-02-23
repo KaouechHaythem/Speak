@@ -32,10 +32,10 @@ public class PostController {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @GetMapping(path = "/search/{text}/{type}")
-    public List<GlobalObject> searchByDescription(@PathVariable("text") String text,@PathVariable("type") String type) throws UnsupportedEncodingException {
+    @GetMapping(path = "/search/{text}")
+    public List<GlobalObject> searchByDescription(@PathVariable("text") String text) throws UnsupportedEncodingException {
 
-        return GObjectService.searchByDescription(URLEncoder.encode(text, "UTF-8"),URLEncoder.encode(text, "UTF-8"),URLEncoder.encode(type, "UTF-8"));
+        return GObjectService.searchByDescription(URLEncoder.encode(text, "UTF-8"));
     }
 
     /**

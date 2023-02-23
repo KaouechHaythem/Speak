@@ -1,40 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NewPostComponent } from './new-post/new-post.component';
-
+import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
-
+import { InfoComponent } from './info/info.component';
 import { ProfileMenuComponent } from './profile-menu/profile-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActualitiesComponent } from './actualities/actualities.component';
 import { FormsModule } from '@angular/forms';
-import { SafeUrlPipe } from './safe-url.pipe';
-import { SearchResultComponent } from './search-result/search-result.component';
-import { RouterModule } from '@angular/router';
-import { ROUTING } from './app-routing.module';
-import { NavbarSearchComponent } from './navbar-search/navbar-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NewPostComponent,
-   
+    PostComponent,
     PostsComponent,
-    
+    InfoComponent,
     ProfileMenuComponent,
-    ActualitiesComponent,
-    SafeUrlPipe,
-    SearchResultComponent,
-    NavbarSearchComponent
+    ActualitiesComponent
   ],
   imports: [
-    ROUTING,
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],

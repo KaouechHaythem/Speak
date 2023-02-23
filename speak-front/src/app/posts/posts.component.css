@@ -1,7 +1,6 @@
 body{
     margin-top:20px;
     background:#eee;
-    height: 100%;
 }
 @media (min-width: 0) {
     .g-mr-15 {

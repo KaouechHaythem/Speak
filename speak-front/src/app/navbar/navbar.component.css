@@ -10,7 +10,7 @@ body{
 }
 .row{
     margin: 0;
- 
+    margin-left: 280px; 
   }
 .col-md-12{
     margin: 0;
