@@ -1,8 +1,8 @@
-<div style="margin-left: 10px; margin-top: 10px; width:800px;">
+<div style="margin-left: 10px; margin-top: 10px; width: 80%;">
     <div class="panel">
         <form #postForm="ngForm" (ngSubmit)="onAddFile(postForm)">
-            <input placeholder="Whats in your mind today?" class="form-control input-lg p-text-area" type="text" name="description">
-            <button class="btn btn-primary pull-right" >Post</button>
+            <input placeholder="Whats in your mind today?" class="form-control input-lg p-text-area" type="text" name="description" ngModel required>
+            <button class="btn btn-primary pull-right" type="submit" [disabled]="postForm.invalid">Post</button>
         </form>
         <footer class="panel-footer">
            
@@ -36,7 +36,7 @@
               <input type="file" name="inputFile" (change)="createFile($event)" ngModel required>
         
             <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButtonImg">Cancel</button>
              <button [disabled]="photoForm.invalid" type="submit" class="btn btn-primary">Add</button>
              </div>
               </form>
@@ -57,13 +57,13 @@
             </div>
      
             <div class="modal-body">
-            <form #videoForm="ngForm" (ngSubmit)="typePhoto()">
+            <form #videoForm="ngForm" (ngSubmit)="typeVideo()">
             
             
               <input type="file" name="inputFile" (change)="createFile($event)" ngModel required>
         
             <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButtonVid">Cancel</button>
              <button [disabled]="videoForm.invalid" type="submit" class="btn btn-primary">Add</button>
              </div>
               </form>

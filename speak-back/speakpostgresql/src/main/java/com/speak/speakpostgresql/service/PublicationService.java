@@ -50,4 +50,14 @@ public class PublicationService {
         Files.write(path, data);
 
     }
+
+    public void post(String description, String owner, String type) {
+        Publication newPub = new Publication("null",
+                description,
+                type,
+                "null",
+                owner);
+        addPub(newPub);
+
+    }
 }

@@ -16,8 +16,4 @@ public class KafkaTopicConfig {
         return TopicBuilder.name("post").build();
     }
 
-    @Bean
-    public NewTopic deleteTopic() {
-        return TopicBuilder.name("delete").build();
-    }
 }

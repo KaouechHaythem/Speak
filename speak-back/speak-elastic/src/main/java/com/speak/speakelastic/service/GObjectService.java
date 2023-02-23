@@ -31,14 +31,9 @@ public class GObjectService {
         gObjectRepository.save(object);
     }
 
-    /**
-     * search an object by description
-     *
-     * @param description
-     * @return
-     */
-    public List<GlobalObject> searchByDescription(final String description) {
-        return gObjectRepository.findByDescriptionLike(description);
+
+    public List<GlobalObject> searchByDescription(final String description,String name,String type) {
+        return gObjectRepository.findByDescriptionOrNameAndTypeLike(description,name,type);
     }
 
     /**
