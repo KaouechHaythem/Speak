@@ -8,14 +8,21 @@ import { Post } from "./Post";
     providedIn:'root'
 })
 export class PostService{
+    public search(motSearch: string, type: string):Observable<Post[]> {
+        return this.http.get<Post[]>(`http://localhost:8081/api/v1/post/search/${motSearch}/${type}`);
+    }
     private apiServerUrl=environment.apiBaseUrl;
     constructor(private http: HttpClient){}
     public getPosts():Observable<Post[]>{
         return this.http.get<Post[]>(`${this.apiServerUrl}/api/v1/search/`);
     }
     public post(data:FormData):Observable<void>{
-        return this.http.post<void>(`${this.apiServerUrl}/api/v1/postgresql/download`,data);
+        return this.http.post<void>(`${this.apiServerUrl}/api/v1/pub/download`,data);
     }
+    public post_text(data:FormData):Observable<void>{
+        return this.http.post<void>(`${this.apiServerUrl}/api/v1/pub/post`,data);
+    }
+    
     
  
 }

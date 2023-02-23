@@ -20,13 +20,15 @@ public class KafkaProdeucerService {
     public void sendObject(GlobalObject object){
         Message<GlobalObject> message = MessageBuilder.withPayload(object)
                 .setHeader(KafkaHeaders.TOPIC,"post")
+                .setHeader("CUSTOM_HEADER", "post")
                 .build();
         kafkaTemplate.send(message);
     }
 
     public void deleteObject(GlobalObject object){
         Message<GlobalObject> message = MessageBuilder.withPayload(object)
-                .setHeader(KafkaHeaders.TOPIC,"delete")
+                .setHeader(KafkaHeaders.TOPIC,"post")
+                .setHeader("CUSTOM_HEADER", "delete")
                 .build();
 
         kafkaTemplate.send(message);

@@ -53,6 +53,13 @@ public class PublicationController {
                          @RequestParam("type") String type) throws IOException {
         this.publicationService.download(file, description, owner, type);
     }
+    @PostMapping(path = "/post")
+    public void post(
+                         @RequestParam("description") String description,
+                         @RequestParam("owner") String owner,
+                         @RequestParam("type") String type) throws IOException {
+        this.publicationService.post( description, owner, type);
+    }
 
 
 }

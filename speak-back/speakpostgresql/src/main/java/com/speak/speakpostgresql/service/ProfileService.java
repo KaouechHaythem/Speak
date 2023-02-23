@@ -16,8 +16,9 @@ public class ProfileService {
         this.profileRepository = profileRepository;
     }
 
-    public void addProfile(Profile profile) {
-        this.profileRepository.save(profile);
+    public void addProfile(String name,String lastName,String description,String email,String age) {
+        Profile p =new Profile(name,description,"profile",lastName,email,Integer.parseInt(age));
+        this.profileRepository.save(p);
     }
 
     public void deleteProfile(String id) {
