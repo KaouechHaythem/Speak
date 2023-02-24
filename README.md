@@ -1,7 +1,7 @@
 # Speak
 A Project that simulates the search process in a social media website . for this i used an elasticsearch database with a postgresql database .
 the synchronisation between the two database is secured via requests sent via a kafka topic with the header post or delete
-## How to run the project
+
 ### Kafka 
  Apache Kafka is an open-source distributed event streaming platform . 
 #### Main Concepts 
