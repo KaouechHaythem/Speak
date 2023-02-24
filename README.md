@@ -14,7 +14,7 @@ the synchronisation between the two database is secured via requests sent via a 
 Kafka can be downloaded from its official site kafka.apache.org
 1. Go to the Downloads folder and select the downloaded Binary file
 2.  Extract the file and move the extracted folder to the directory where you wish to keep the files.
-3. Copy the path of the Kafka folder. Now go to config inside kafka folder and open zookeeper.properties file. Copy the path against the field dataDir and add /zookeeper-data to the path.
+3. Copy the path of the Kafka folder. Now go to config inside kafka folder and open zookeeper.properties file. Copy the path against the field dataDir and add /zookeeper-data to the path. <br>
 !! NOTE : extratct your kafka folder in a small path like D:/ or else you can run into error while running kafka
 4. Now in the same folder config open server.properties and scroll down to log.dirs and paste the path. To the path add /kafka-logs
 5. open terminal and run 
